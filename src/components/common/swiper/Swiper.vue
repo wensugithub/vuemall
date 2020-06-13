@@ -52,7 +52,7 @@
         this.addDom();
         // 开启timer，由于是轮播所以得用到setInterval
         this.startTimer();
-      } ,1000)
+      } ,2000)
     },
     methods: {
       /**
@@ -133,14 +133,14 @@
       checkPosition() {
         // 这里加上timeout是由于最后一张图片向第一张图片移动时，为了让他看起来有滑动的效果
         setTimeout(() => {
+          this.swiperStyle.transition = "0ms";
           // 转到最后一张图片(api取出数据的第一张)
           if (this.currentIndex >= this.slideCount + 1) {
-            this.swiperStyle.transition = "transform 0ms";
             this.currentIndex = 1;
             this.setTransform(-this.swiperWidth);
           } else if(this.currentIndex <= 0) {
             this.currentIndex = this.slideCount;
-            this.setTransform(-this.currentIndex * this.slideCount)
+            this.setTransform(-this.currentIndex * this.swiperWidth)
           }
         }, this.transitionTime)
       },
@@ -159,7 +159,6 @@
        * 鼠标点击后移动
        */
       touchMove(e) {
-        console.log("this is move");
         this.currentX = e.touches[0].pageX;
         // 鼠标移动时X - 鼠标点击时X
         // >0 的话，是向右移动，trslate3d 值减少 比如：-750的话，向右移动后变为-730
