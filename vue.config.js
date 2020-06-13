@@ -9,6 +9,6 @@ module.exports = {
         'views': '@/views'
       }
     }
-  }
-  // publicPath: '/vuemall/dist/'
+  },
+  publicPath: '/vuemall/dist/'
 }
