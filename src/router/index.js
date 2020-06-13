@@ -12,7 +12,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "index.html",
+    path: "/vuemall/dist/index.html",
     redirect: "/vuemall/home"
   },
   {
