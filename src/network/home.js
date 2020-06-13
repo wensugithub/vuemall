@@ -7,6 +7,6 @@ export function getHomeMultidata() {
 }
 
 export function getHomeMultidataJsonp() {
-  return requestJsonp('http://123.207.32.32:8000/home/multidata')
+  return requestJsonp('//123.207.32.32:8000/home/multidata')
 }
 
