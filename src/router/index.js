@@ -12,11 +12,11 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "",
-    redirect: "/home"
+    path: "index.html",
+    redirect: "/vuemall/home"
   },
   {
-    path: "/home",
+    path: "/vuemall/home",
     component: Home
   },
   {
