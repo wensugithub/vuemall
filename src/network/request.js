@@ -9,9 +9,9 @@ export function requestJsonp(url) {
     scriptNode.type = "text/javascript";
     scriptNode.src = `${url}?callback=jsonCallBack`;
     document.getElementsByTagName('head')[0].appendChild(scriptNode);
-    // setTimeout(function () {
-    //   document.getElementsByTagName('head')[0].removeChild(scriptNode);
-    // },1000)
+    setTimeout(function () {
+      document.getElementsByTagName('head')[0].removeChild(scriptNode);
+    },1000)
   })
 }
 
