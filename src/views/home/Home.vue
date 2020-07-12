@@ -63,7 +63,8 @@
         currentType: "pop",
         isShowBackTopFlag: false,
         tabControllOffsetTop: 0,
-        isTabFixed: false
+        isTabFixed: false,
+        saveY: 0
       }
     },
     created() {
@@ -82,6 +83,18 @@
         // 为了防止refresh调用很多次
         refresh()
       })
+    },
+    destroyed() {
+      console.log("home destroyed");
+    },
+    activated() {
+      console.log("active", this.saveY);
+      this.$refs.scroll.scrollTo(0, this.saveY, 10);
+      this.$refs.scroll.refresh();
+    },
+    deactivated() {
+      this.saveY = this.$refs.scroll.getScrollY();
+      console.log("deactive", this.saveY);
     },
     computed: {
       showGoods() {

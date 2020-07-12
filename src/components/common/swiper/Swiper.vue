@@ -180,7 +180,8 @@
         else if(this.distance > 0 && currentMove > this.swiperWidth * this.moveRatio) {
           // 向右拖拽并且拖拽的距离达到swiper宽的moveRatio比例的话
           this.currentIndex--
-        } else if (this.distance < 0 && currentMove > this.swiperWidth * this.moveRatio) {
+        }
+        else if (this.distance < 0 && currentMove > this.swiperWidth * this.moveRatio) {
           // 向左拖拽并且拖拽的距离达到swiper宽的moveRatio比例的话
           this.currentIndex++
         }

@@ -27,6 +27,7 @@
       }
     },
     mounted() {
+      console.log("scroll.vue", "mounted");
       // 1.创建BetterScroll对象
       this.scroll = new BScroll(this.$refs.wrapper,{
         // 获取位置信息，包含惯性滚动
@@ -45,6 +46,7 @@
       // 3. 监听上拉加载
       if (this.pullUpLoad) {
         this.scroll.on("pullingUp", () => {
+          console.log("mounted pullUpLoad on");
           // 监听滚动到底部
           this.$emit("pullingUp");
         })
@@ -62,6 +64,10 @@
       refresh() {
         // 图片加载时，利用防抖函数，加载完图片后，需要重新计算better-scroll的位置来容纳图片
         this.scroll && this.scroll.refresh();
+      },
+      getScrollY() {
+        // 取出跳转前的位置
+        return this.scroll ? this.scroll.y : 0;
       }
     }
   }
